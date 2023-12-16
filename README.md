@@ -1,6 +1,6 @@
 # Student Mentor Assign Front-End
 ## Overview
-- API to create a new Student Mentor and Assigning them to each other
+- create a new Student Mentor and Assigning them to each other
 - Keep track of mentor assigned to the students previously 
 - Can change mentor for students it will be automatically updated to both students and mentors
 
