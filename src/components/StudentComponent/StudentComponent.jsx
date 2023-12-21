@@ -7,7 +7,7 @@ const StudentComponent = ({ name, batch, id }) => {
   const [view, setView] = useState(true);
 
   return (
-    <div className=" bg-zinc-600 p-3 rounded-md min-w-[280px] text-gray-200 flex gap-3 flex-col">
+    <div className=" bg-teal-950 rounded-md min-w-[280px] text-gray-200 flex gap-3 flex-col px-4 py-6">
       <p>
         <span className="font-bold ">Student Name: </span> {name}
       </p>
