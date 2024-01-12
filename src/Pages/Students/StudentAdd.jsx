@@ -1,78 +1,85 @@
 /* eslint-disable react/prop-types */
 
 import { useState } from "react";
-import { API } from "../../helpers/API"
+import { API } from "../../helpers/API";
 
+const StudentAdd = ({ setShowAdd, setStuData }) => {
+  const endPoints = "student/add";
+  const [name, setName] = useState("");
+  const [batch, setBatch] = useState("");
 
-const StudentAdd = ({setShowAdd, setStuData}) => {
-
-  const endPoints = 'student/add';
-  const [name,setName] = useState('');
-  const [batch,setBatch] = useState('');
-
-  function handleAdd(){
-    if(!name || !batch){
-      alert('fields are required')
-      return
+  function handleAdd() {
+    if (!name || !batch) {
+      alert("fields are required");
+      return;
     }
     const newStudent = {
       student_name: name,
-      batch: batch
-    }
+      batch: batch,
+    };
 
     fetch(`${API}/${endPoints}`, {
-      method: 'POST',
-      headers:{
-        'Content-Type': 'application/json'
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(newStudent)
+      body: JSON.stringify(newStudent),
     })
-    .then((data) => data.json())
-    .then((data) => {
-      setStuData((pre) => [...pre, data] )
-    })
-    .catch((err) => console.log(err));
-    setShowAdd('hide');
+      .then((data) => data.json())
+      .then((data) => {
+        setStuData((pre) => [...pre, data]);
+      })
+      .catch((err) => console.log(err));
+    setShowAdd("hide");
   }
 
   return (
-    <div className="flex flex-col items-center justify-center gap-5 py-3 mb-6" >
-        <div className="w-72">
-          <div>
-              <input type="text" id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Student Name"
-              required 
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              />
-          </div>
-        </div>  
-
-        <div className="w-72">
-          <div>
-              <input type="text" id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Batch" required 
-              value={batch}
-              onChange={(e) => setBatch(e.target.value)}
-              />
-          </div>
+    <div className="flex flex-col items-center justify-center gap-5 py-3 mb-6">
+      <div className="w-72">
+        <div>
+          <input
+            type="text"
+            id="first_name"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Student Name"
+            required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
+      </div>
 
-        <div className="flex flex-row justify-around gap-3">
-            <button
-            onClick={() => setShowAdd('hide')}
-            className="px-3 py-1 bg-orange-500 rounded-md"
-            >
-                Cancel
-            </button>
-
-            <button
-            onClick={() => handleAdd() }
-            className="px-3 py-1 bg-green-500 rounded-md"
-            >
-                Add
-            </button>
+      <div className="w-72">
+        <div>
+          <input
+            type="text"
+            id="first_name"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Batch"
+            required
+            value={batch}
+            onChange={(e) => setBatch(e.target.value)}
+          />
         </div>
+      </div>
+
+      <div className="flex flex-row justify-around gap-3">
+        <button
+          onClick={() => setShowAdd("hide")}
+          className="px-3 py-1 bg-orange-500 rounded-md hover:contrast-150"
+        >
+          Cancel
+        </button>
+
+        <button
+          onClick={() => handleAdd()}
+          className="px-3 py-1 bg-green-500 rounded-md hover:contrast-150"
+        >
+          Add
+        </button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default StudentAdd
+export default StudentAdd;

@@ -18,7 +18,12 @@ const StudentComponent = ({ name, batch, id }) => {
       {view ? (
         <p>
           <span className="font-bold ">Old Mentor: </span>
-          <button onClick={() => setView(false)}>Click Here</button>
+          <button
+            onClick={() => setView(false)}
+            className="[text-shadow:2px_2px_5px_white] relative hover:top-[-2px]"
+          >
+            Click Here
+          </button>
         </p>
       ) : (
         <div>

@@ -21,7 +21,12 @@ const MentorComponent = ({ name, course, students, id }) => {
       {view ? (
         <p>
           <span className="font-bold">Student Details: </span>
-          <button onClick={() => setView(false)}>Click Here</button>
+          <button
+            onClick={() => setView(false)}
+            className="[text-shadow:2px_2px_5px_white] relative hover:top-[-2px]"
+          >
+            Click Here
+          </button>
         </p>
       ) : (
         <div>

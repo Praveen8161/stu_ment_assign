@@ -67,7 +67,7 @@ const AssignMentor = () => {
       </div>
       <div className="flex flex-row items-center justify-center py-2">
         <button
-          className="px-3 py-1 mt-1 font-semibold text-center rounded-md bg-slate-300"
+          className="px-3 py-1 mt-1 font-semibold text-center rounded-md bg-slate-300 hover:contrast-150"
           onClick={handleAssign}
         >
           Assign Mentor
@@ -117,7 +117,7 @@ function StudentList({ checkedItems, setCheckedItems }) {
           <div>
             <button
               onClick={() => setNoMent(false)}
-              className="px-3 py-1 font-semibold bg-green-500 rounded-md"
+              className="px-3 py-1 font-semibold bg-green-500 rounded-md hover:contrast-150"
             >
               Switch to No mentor
             </button>
@@ -129,7 +129,7 @@ function StudentList({ checkedItems, setCheckedItems }) {
           <div className="w-full">
             <button
               onClick={() => setNoMent(true)}
-              className="px-3 py-1 font-semibold text-left bg-green-500 rounded-md"
+              className="px-3 py-1 font-semibold text-left bg-green-500 rounded-md hover:contrast-150"
             >
               Switch to All Student
             </button>
