@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import StudentComponent from "../../components/StudentComponent/StudentComponent";
 import StudentAdd from "./StudentAdd";
 
+// Student page
 const Students = () => {
   const [stuData, setStuData] = useState([]);
   const [showAdd, setShowAdd] = useState("hide");

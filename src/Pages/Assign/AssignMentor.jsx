@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { API } from "../../helpers/API";
 import Header from "../../components/Header";
 
+// Assign mentor page
 const AssignMentor = () => {
   const [selectedMentor, setSelectedMentor] = useState("");
   const [checkedItems, setCheckedItems] = useState([]);

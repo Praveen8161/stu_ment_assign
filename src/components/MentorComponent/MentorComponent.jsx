@@ -3,6 +3,7 @@
 import { useState } from "react";
 import ClassStudents from "../../Pages/Mentor/ClassStudents";
 
+// Mentor Card
 const MentorComponent = ({ name, course, students, id }) => {
   const [view, setView] = useState(true);
   return (

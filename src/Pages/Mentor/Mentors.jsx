@@ -4,6 +4,7 @@ import { API } from "../../helpers/API";
 import MentorComponent from "../../components/MentorComponent/MentorComponent";
 import MentorAdd from "./MentorAdd";
 
+// Mentor page
 const Mentors = () => {
   const [mentData, setMentData] = useState([]);
   const [showAdd, setShowAdd] = useState("hide");

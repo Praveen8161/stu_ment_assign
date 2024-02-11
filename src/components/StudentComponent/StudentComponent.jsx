@@ -3,6 +3,7 @@
 import { useState } from "react";
 import OldMentors from "../../Pages/Students/OldMentors";
 
+// Student card
 const StudentComponent = ({ name, batch, id }) => {
   const [view, setView] = useState(true);
 
